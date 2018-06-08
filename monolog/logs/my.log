@@ -1,0 +1,6 @@
+[2018-01-29 03:59:44] name.WARNING: english [] []
+[2018-01-29 03:59:44] name.ERROR: chinese [] []
+[2018-01-29 14:11:11] name.WARNING: english {"one":"sunny","two":"cloudy"} []
+[2018-01-29 14:11:11] name.ERROR: chinese [] []
+[2018-01-29 14:23:23] name.WARNING: english {"one":"sunny","two":"cloudy"} []
+[2018-01-29 14:37:18] name.ERROR: chinese [] []

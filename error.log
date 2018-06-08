@@ -1,0 +1,106 @@
+2018/03/09 11:25:43 [error] 22985#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: php.app, request: "GET /demo.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "php.app"
+2018/03/09 11:32:37 [error] 23069#0: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "logs/request.log" could not be opened: failed to open stream: Permission denied in /web/php/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /web/php/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Monolog\Handler\StreamHandler->write(Array)
+#1 /web/php/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#2 /web/php/vendor/monolog/monolog/src/Monolog/Logger.php(546): Monolog\Logger->addRecord(200, 'curl -X GET 'ht...', Array)
+#3 /web/php/guzzle/demo01.php(81): Monolog\Logger->info('curl -X GET 'ht...')
+#4 /web/php/vendor/guzzlehttp/guzzle/src/Middleware.php(205): {closure}(Object(GuzzleHttp\Psr7\Request))
+#5 /web/php/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(37): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /web/php/vendor/guzzlehttp/guzzle/src/Middl" while reading response header from upstream, client: 10.1.16.169, server: php.app, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/03/09 11:34:34 [error] 23069#0: *6 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "logs/request.log" could not be opened: failed to open stream: Permission denied in /web/php/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /web/php/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Monolog\Handler\StreamHandler->write(Array)
+#1 /web/php/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#2 /web/php/vendor/monolog/monolog/src/Monolog/Logger.php(546): Monolog\Logger->addRecord(200, 'curl -X GET 'ht...', Array)
+#3 /web/php/guzzle/demo01.php(81): Monolog\Logger->info('curl -X GET 'ht...')
+#4 /web/php/vendor/guzzlehttp/guzzle/src/Middleware.php(205): {closure}(Object(GuzzleHttp\Psr7\Request))
+#5 /web/php/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(37): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /web/php/vendor/guzzlehttp/guzzle/src/Middl" while reading response header from upstream, client: 10.1.16.169, server: php.app, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/03/09 11:43:43 [error] 23999#0: *1 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 10.1.16.169, server: php.app, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.app"
+2018/03/09 11:43:43 [error] 23999#0: *4 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: php.app, request: "GET /guzzle/get1.php?desc=shopping HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.app"
+2018/03/09 11:44:13 [error] 23999#0: *1 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 10.1.16.169, server: php.app, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.app"
+2018/03/09 11:44:13 [error] 23999#0: *8 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: php.app, request: "GET /guzzle/get1.php?desc=shopping HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.app"
+2018/03/16 10:14:40 [error] 2419#0: *235 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(vendor/autoload.php): failed to open stream: No such file or directory in /web/php/guzzle/demo04.php on line 2
+PHP message: PHP Fatal error:  require_once(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/local/php/lib/php') in /web/php/guzzle/demo04.php on line 2" while reading response header from upstream, client: 10.1.16.169, server: php.app, request: "GET /guzzle/demo04.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/03/16 11:00:53 [error] 2419#0: *242 FastCGI sent in stderr: "Unable to open primary script: /web/php/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.169, server: php.app, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app", referrer: "http://php.app/guzzle/demo01.php"
+2018/03/20 17:07:21 [error] 23990#0: *131 FastCGI sent in stderr: "PHP message: PHP Warning:  strrpos() expects at least 2 parameters, 1 given in /web/php/demo.php on line 10" while reading response header from upstream, client: 10.1.16.169, server: php.app, request: "GET /demo.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/03/27 15:51:35 [error] 23991#0: *421 FastCGI sent in stderr: "PHP message: PHP Warning:  implode(): Invalid arguments passed in /web/php/guzzle/xml.php on line 14
+PHP message: PHP Warning:  Cannot use a scalar value as an array in /web/php/guzzle/xml.php on line 19" while reading response header from upstream, client: 10.1.16.69, server: php.app, request: "GET /guzzle/xml.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/03/28 11:28:24 [error] 23991#0: *472 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(vendor/autoload.php): failed to open stream: No such file or directory in /web/php/guzzle/demo04.php on line 2
+PHP message: PHP Fatal error:  require_once(): Failed opening required 'vendor/autoload.php' (include_path='.:/usr/local/php/lib/php') in /web/php/guzzle/demo04.php on line 2" while reading response header from upstream, client: 10.1.16.69, server: php.app, request: "GET /guzzle/demo04.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/03/28 11:28:35 [error] 23991#0: *472 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 10.1.16.69, server: php.app, request: "GET /guzzle/xml.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.app"
+2018/04/10 15:44:54 [error] 23991#0: *1340 directory index of "/web/php/" is forbidden, client: 10.1.16.69, server: php.app, request: "HEAD / HTTP/1.1", host: "php.app"
+2018/04/10 15:44:57 [error] 23991#0: *1340 directory index of "/web/php/" is forbidden, client: 10.1.16.69, server: php.app, request: "HEAD / HTTP/1.1", host: "php.app"
+2018/04/10 15:45:06 [error] 23991#0: *1342 directory index of "/web/php/" is forbidden, client: 10.1.16.69, server: php.app, request: "GET / HTTP/1.1", host: "php.app"
+2018/04/10 15:45:08 [error] 23991#0: *1340 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 10.1.16.69, server: php.app, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.app"
+2018/04/10 15:45:10 [error] 23991#0: *1342 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 10.1.16.69, server: php.app, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.app"
+2018/04/10 15:45:12 [error] 23991#0: *1344 directory index of "/web/php/" is forbidden, client: 10.1.16.69, server: php.app, request: "GET / HTTP/1.1", host: "php.app"
+2018/04/10 15:45:12 [error] 23991#0: *1344 directory index of "/web/php/guzzle/" is forbidden, client: 10.1.16.69, server: php.app, request: "GET /guzzle/ HTTP/1.1", host: "php.app"
+2018/04/10 15:45:18 [error] 23991#0: *1344 FastCGI sent in stderr: "Unable to open primary script: /web/php/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.69, server: php.app, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/05/03 15:28:18 [error] 9523#0: *5 FastCGI sent in stderr: "Unable to open primary script: /web/php-test/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.69, server: php.app, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.app"
+2018/05/03 15:28:23 [error] 9523#0: *8 directory index of "/web/php-test/" is forbidden, client: 10.1.16.69, server: php.app, request: "GET / HTTP/1.1", host: "php.app"
+2018/05/03 15:57:16 [error] 9551#0: *1 FastCGI sent in stderr: "Unable to open primary script: /web/php-test/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test", referrer: "http://php.test/phpinfo.php"
+2018/05/03 17:30:33 [error] 9552#0: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Elasticsearch\Common\Exceptions\NoNodesAvailableException: No alive nodes found in your cluster in /web/php-test/vendor/elasticsearch/elasticsearch/src/Elasticsearch/ConnectionPool/StaticNoPingConnectionPool.php:51
+Stack trace:
+#0 /web/php-test/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php(76): Elasticsearch\ConnectionPool\StaticNoPingConnectionPool->nextConnection()
+#1 /web/php-test/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Transport.php(94): Elasticsearch\Transport->getConnection()
+#2 /web/php-test/vendor/elasticsearch/elasticsearch/src/Elasticsearch/Connections/Connection.php(246): Elasticsearch\Transport->performRequest('PUT', '/my_index/my_ty...', Array, '{"testField":"z...', Array)
+#3 /web/php-test/vendor/react/promise/src/FulfilledPromise.php(25): Elasticsearch\Connections\Connection->Elasticsearch\Connections\{closure}(Array)
+#4 /web/php-test/vendor/guzzlehttp/ringphp/src/Future/CompletedFutureValue.php(55): React\Promise\Fulf" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /elasticsearch/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/05/16 10:49:42 [error] 9552#0: *723 directory index of "/web/php-test/" is forbidden, client: 10.1.16.69, server: php.test, request: "GET / HTTP/1.1", host: "php.test"
+2018/05/16 10:52:14 [error] 9552#0: *729 FastCGI sent in stderr: "Unable to open primary script: /web/php-test/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /excel/demo01.html HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/05/16 12:49:57 [error] 9552#0: *767 FastCGI sent in stderr: "Unable to open primary script: /web/php-test/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/05/16 12:49:59 [error] 9552#0: *767 FastCGI sent in stderr: "Unable to open primary script: /web/php-test/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test", referrer: "http://php.test/excel/demo01.html"
+2018/05/23 09:25:20 [error] 2497#0: *1 FastCGI sent in stderr: "Unable to open primary script: /web/php-test/index.php (No such file or directory)" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test", referrer: "http://php.test/demo.php"
+2018/05/23 09:40:16 [error] 2497#0: *11 FastCGI sent in stderr: "PHP message: PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+Unable to open primary script: /web/php-test/demo.php (Permission denied)" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /demo.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/05/23 09:40:29 [error] 2497#0: *11 FastCGI sent in stderr: "PHP message: PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+Unable to open primary script: /web/php-test/demo.php (Permission denied)" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /demo.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/05/24 10:34:37 [error] 2497#0: *85 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'memcached' not found in /web/php-test/memcached.php:40
+Stack trace:
+#0 /web/php-test/memcached.php(56): GetModMemcache->getMemcached(0)
+#1 /web/php-test/memcached.php(76): GetModMemcache->setKey('key3', 'key33333')
+#2 {main}
+  thrown in /web/php-test/memcached.php on line 40" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /memcached.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/05/25 14:02:47 [error] 2497#0: *161 directory index of "/web/php-test/" is forbidden, client: 10.1.16.69, server: php.test, request: "GET / HTTP/1.1", host: "php.test"
+2018/06/05 14:02:01 [error] 2498#0: *548 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function get_env() in /web/php-test/server.php:2
+Stack trace:
+#0 {main}
+  thrown in /web/php-test/server.php on line 2" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /server.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/06/05 14:02:50 [error] 2497#0: *551 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function get_env() in /web/php-test/server.php:2
+Stack trace:
+#0 {main}
+  thrown in /web/php-test/server.php on line 2" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /server.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/06/05 14:03:38 [error] 2497#0: *554 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to undefined function get_env() in /web/php-test/server.php:2
+Stack trace:
+#0 {main}
+  thrown in /web/php-test/server.php on line 2" while reading response header from upstream, client: 127.0.0.1, server: php.test, request: "GET /server.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/06/05 14:04:09 [error] 2497#0: *556 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "logs/request.log" could not be opened: failed to open stream: Permission denied in /web/php-test/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /web/php-test/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Monolog\Handler\StreamHandler->write(Array)
+#1 /web/php-test/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#2 /web/php-test/vendor/monolog/monolog/src/Monolog/Logger.php(546): Monolog\Logger->addRecord(200, 'curl -X GET 'ht...', Array)
+#3 /web/php-test/guzzle/demo01.php(81): Monolog\Logger->info('curl -X GET 'ht...')
+#4 /web/php-test/vendor/guzzlehttp/guzzle/src/Middleware.php(205): {closure}(Object(GuzzleHttp\Psr7\Request))
+#5 /web/php-test/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(37): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /web/php" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/06/07 18:30:53 [error] 2497#0: *694 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "logs/request.log" could not be opened: failed to open stream: Permission denied in /web/php-test/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /web/php-test/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Monolog\Handler\StreamHandler->write(Array)
+#1 /web/php-test/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#2 /web/php-test/vendor/monolog/monolog/src/Monolog/Logger.php(546): Monolog\Logger->addRecord(200, 'curl -X POST 'h...', Array)
+#3 /web/php-test/guzzle/demo01.php(81): Monolog\Logger->info('curl -X POST 'h...')
+#4 /web/php-test/vendor/guzzlehttp/guzzle/src/Middleware.php(205): {closure}(Object(GuzzleHttp\Psr7\Request))
+#5 /web/php-test/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(66): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /web/php" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/06/07 18:31:46 [error] 2498#0: *700 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "logs/request.log" could not be opened: failed to open stream: Permission denied in /web/php-test/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /web/php-test/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Monolog\Handler\StreamHandler->write(Array)
+#1 /web/php-test/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#2 /web/php-test/vendor/monolog/monolog/src/Monolog/Logger.php(546): Monolog\Logger->addRecord(200, 'curl -X POST 'h...', Array)
+#3 /web/php-test/guzzle/demo01.php(81): Monolog\Logger->info('curl -X POST 'h...')
+#4 /web/php-test/vendor/guzzlehttp/guzzle/src/Middleware.php(205): {closure}(Object(GuzzleHttp\Psr7\Request))
+#5 /web/php-test/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(66): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 /web/php" while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock:", host: "php.test"
+2018/06/07 18:34:54 [error] 2498#0: *704 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 10.1.16.69, server: php.test, request: "GET /guzzle/demo01.php HTTP/1.1", upstream: "fastcgi://unix:/tmp/php-cgi.sock", host: "php.test"
